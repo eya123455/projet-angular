@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -6,31 +6,33 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Home {
-  nom ="eya";
-  imgurl="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/1280px-Angular_gradient_logo.png?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+  nom = 'Eya';
 
-  bonjour() {alert('Bonjour ');}
+  bonjour() {
+    alert(`Bonjour ${this.nom} !`);
+  }
 
+  nom1 = 'Amen';
+  students = ['Ahmed', 'Ali', 'Amine', 'Aymen', 'Anis'];
+  students2 = [
+    { name: 'Ahmed', age: 20 },
+    { name: 'Ali', age: 21 },
+    { name: 'Amine', age: 22 },
+    { name: 'Aymen', age: 23 },
+    { name: 'Anis', age: 24 },
+  ];
 
-  nom1="amen"
+  count = 0;
+  counts = signal(0);
 
-  students=["Ahmed","Ali","Amine","Aymen","Anis"]
-  students2=[
-    {name:"Ahmed",age:20},
-    {name:"Ali",age:21},
-    {name:"Amine",age:22},
-    {name:"Aymen",age:23},
-    {name:"Anis",age:24}
-  ]
-  
-  count=0;
-  counts=signal(0);
-  incrementSimple(){
+  incrementSimple() {
     this.count++;
   }
-  increment(){
-    this.counts.update(v => v+1);
+
+  increment() {
+    this.counts.update(v => v + 1);
   }
 }

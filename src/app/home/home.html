@@ -1,25 +1,86 @@
-<p>4ssa4</p>
-<h1>Bienvenue, {{ nom }}!</h1>
-<img [src]="imgurl" alt="Angular Logo" width="200" height="200">
-<button (click)="bonjour()">Cliquez ici pour dire bonjour</button>
-<br>
-<input  [(ngModel)]="nom1" >
-<p>Bonjour {{ nom1 }}!</p>
+<main class="home-page">
+  <section class="welcome-card" aria-labelledby="welcome-title">
+    <div class="welcome-copy">
+      <span class="eyebrow">Votre espace d’apprentissage</span>
+      <h1 id="welcome-title">Bienvenue, {{ nom }} <span aria-hidden="true">✨</span></h1>
+      <p>Découvrez vos activités, faites connaissance avec le groupe et suivez votre progression.</p>
+      <button class="button button-primary" type="button" (click)="bonjour()">
+        Dire bonjour
+      </button>
+    </div>
+    <div class="welcome-mark" aria-hidden="true">P</div>
+  </section>
 
-@if( nom1 =="amen"){
-    <p>Vous êtes aziz!</p>
-}
-@else{
-    <p>Vous n'êtes pas aziz!</p>
-}
-@for (s of students; track $index) {
-    {{s}}
-}
-@for (s2 of students2; track $index) {
-    {{s2.name}} ({{s2.age}})
-}
-<h1>comptuer simple: {{ count }}</h1>
-<button (click)="incrementSimple()">Incrementers signal</button>
-<h1>Compteur signal: {{ counts() }}</h1>
-<button (click)="increment()">Incrementer signal</button>
+  <section class="content-grid" aria-label="Activités">
+    <article class="panel greeting-panel">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">Faisons connaissance</span>
+          <h2>Un petit bonjour ?</h2>
+        </div>
+        <span class="panel-icon" aria-hidden="true">👋</span>
+      </div>
+      <label for="name-input">Votre prénom</label>
+      <input
+        id="name-input"
+        type="text"
+        [(ngModel)]="nom1"
+        placeholder="Saisissez votre prénom"
+        autocomplete="given-name"
+      >
+      <p class="greeting-message" aria-live="polite">Bonjour {{ nom1 || 'à vous' }} !</p>
 
+      @if (nom1.toLowerCase() === 'amen') {
+        <p class="callout">Ravi de vous retrouver, Amen !</p>
+      } @else {
+        <p class="helper-text">Entrez « Amen » pour découvrir votre petit message.</p>
+      }
+    </article>
+
+    <article class="panel group-panel">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">La communauté</span>
+          <h2>Le groupe</h2>
+        </div>
+        <span class="member-count">{{ students.length + students2.length }} membres</span>
+      </div>
+      <div class="name-list" aria-label="Prénoms des membres">
+        @for (student of students; track student) {
+          <span class="name-chip">{{ student }}</span>
+        }
+        @for (student of students2; track student.name) {
+          <span class="name-chip">{{ student.name }} <span class="age">· {{ student.age }} ans</span></span>
+        }
+      </div>
+    </article>
+
+    <article class="panel counter-panel">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">Exercice interactif</span>
+          <h2>Compteur simple</h2>
+        </div>
+        <span class="panel-icon panel-icon-blue" aria-hidden="true">＋</span>
+      </div>
+      <p class="counter-value" aria-live="polite">{{ count }}</p>
+      <button class="button button-secondary" type="button" (click)="incrementSimple()">
+        Incrémenter
+      </button>
+    </article>
+
+    <article class="panel counter-panel">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">Avec les signaux Angular</span>
+          <h2>Compteur signal</h2>
+        </div>
+        <span class="panel-icon panel-icon-green" aria-hidden="true">↗</span>
+      </div>
+      <p class="counter-value" aria-live="polite">{{ counts() }}</p>
+      <button class="button button-secondary" type="button" (click)="increment()">
+        Incrémenter
+      </button>
+    </article>
+  </section>
+</main>

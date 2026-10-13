@@ -1,2 +1,12 @@
-<a routerLink="/home">Home</a>
-<a routerLink="/list">List Conferances</a>
+<header class="site-header">
+  <a class="brand" routerLink="/home" aria-label="Prosit, accueil">
+    <span class="brand-mark" aria-hidden="true">P</span>
+    <span>prosit<span class="brand-dot">.</span></span>
+  </a>
+  <nav class="site-nav" aria-label="Navigation principale">
+    <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Accueil
+    </a>
+    <a routerLink="/list" routerLinkActive="active">Conférences</a>
+  </nav>
+</header>

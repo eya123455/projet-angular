@@ -1,18 +1,18 @@
-<li>
-
-  <h3>
-    {{ conference().name }}
-  </h3>
-
-  <p>
-    Date : {{ conference().date }}
-  </p>
-
-  <p>
-    Location : {{ conference().location }}
-  </p>
-
-</li>
-<button (click)="incrementCount()">
-  +
-</button>
+<article class="conference-card">
+  <div class="conference-card-top">
+    <span class="conference-icon" aria-hidden="true">✦</span>
+    <span class="conference-tag">Conférence</span>
+  </div>
+  <h2>{{ conference().name }}</h2>
+  <dl class="conference-meta">
+    <div>
+      <dt>Date</dt>
+      <dd>{{ conference().date }}</dd>
+    </div>
+    <div>
+      <dt>Lieu</dt>
+      <dd>{{ conference().location }}</dd>
+    </div>
+  </dl>
+  <button class="button" type="button" (click)="inc()">Je suis intéressé·e</button>
+</article>

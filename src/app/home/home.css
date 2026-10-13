@@ -1,0 +1,254 @@
+:host {
+  display: block;
+}
+
+.home-page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.welcome-card {
+  display: flex;
+  min-height: 15rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  overflow: hidden;
+  padding: clamp(1.75rem, 5vw, 3.5rem);
+  border-radius: 1.5rem;
+  color: #fff;
+  background:
+    radial-gradient(circle at 82% 20%, rgb(255 255 255 / 20%), transparent 15rem),
+    linear-gradient(120deg, #087f8c, #15999a 68%, #55bfa8);
+  box-shadow: 0 1rem 2.5rem rgb(8 127 140 / 16%);
+}
+
+.welcome-copy {
+  max-width: 42rem;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #766d8b;
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.welcome-card .eyebrow {
+  color: #e9defe;
+}
+
+.welcome-card h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  letter-spacing: -0.045em;
+}
+
+.welcome-card p {
+  max-width: 36rem;
+  margin: 0.85rem 0 1.5rem;
+  color: #f0eaff;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.welcome-mark {
+  display: grid;
+  width: clamp(5rem, 14vw, 9rem);
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 2rem;
+  color: #fff;
+  background: rgb(255 255 255 / 14%);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 800;
+  transform: rotate(6deg);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.panel {
+  min-width: 0;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px solid #e3eceb;
+  border-radius: 1.25rem;
+  background: #fff;
+  box-shadow: 0 0.5rem 1.5rem rgb(50 35 82 / 5%);
+}
+
+.panel-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.panel h2 {
+  margin: 0;
+  color: #282238;
+  font-size: 1.3rem;
+  letter-spacing: -0.025em;
+}
+
+.panel-icon {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 0.9rem;
+  background: #e5f5f4;
+  font-size: 1.25rem;
+}
+
+.panel-icon-blue {
+  color: #4f66c8;
+  background: #eef1ff;
+}
+
+.panel-icon-green {
+  color: #34856b;
+  background: #e8f7f0;
+}
+
+.greeting-panel label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #453d55;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.greeting-panel input {
+  width: 100%;
+  min-height: 2.9rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid #d8d1e4;
+  border-radius: 0.7rem;
+  color: #282238;
+  background: #fff;
+  font: inherit;
+}
+
+.greeting-panel input:focus-visible {
+  border-color: #15999a;
+  outline: 3px solid rgb(21 153 154 / 20%);
+}
+
+.greeting-message {
+  margin: 1rem 0 0.25rem;
+  color: #145d67;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.callout,
+.helper-text {
+  margin: 0.5rem 0 0;
+  color: #706981;
+  font-size: 0.88rem;
+}
+
+.callout {
+  color: #378065;
+  font-weight: 650;
+}
+
+.member-count {
+  padding: 0.4rem 0.65rem;
+  border-radius: 99px;
+  color: #176d77;
+  background: #e5f5f4;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.name-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.name-chip {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #e4eeed;
+  border-radius: 99px;
+  color: #443b56;
+  background: #faf9fc;
+  font-size: 0.85rem;
+}
+
+.age {
+  color: #837b91;
+}
+
+.counter-value {
+  margin: 0 0 1rem;
+  color: #332650;
+  font-size: 2.5rem;
+  font-weight: 750;
+  line-height: 1;
+}
+
+.button {
+  min-height: 2.75rem;
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 0.7rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:focus-visible {
+  outline: 3px solid #064e55;
+  outline-offset: 3px;
+}
+
+.button-primary {
+  color: #087b83;
+  background: #fff;
+}
+
+.button-primary:hover {
+  box-shadow: 0 0.4rem 1rem rgb(29 17 67 / 18%);
+}
+
+.button-secondary {
+  color: #087b83;
+  background: #e5f5f4;
+}
+
+.button-secondary:hover {
+  background: #d5efec;
+}
+
+@media (max-width: 680px) {
+  .welcome-card {
+    min-height: 0;
+  }
+
+  .welcome-mark {
+    display: none;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
